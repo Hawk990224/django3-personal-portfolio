@@ -1,0 +1,13 @@
+
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+<h2>Title:<br> {{ blog.title }} </h2>
+<br>
+<h5>Date:<br> -- {{ blog.date|date:'F jS Y' }} --</h5>
+<br>
+<h2>Description:</h2> <br><h5>{{ blog.description|safe}}  </h5>
+
+<!-- <a href='{% url 'home' %}' type="button" class="btn btn-secondary" data-toggle="button" aria-pressed="true" autocomplete="off">Home</a> -->
+
+{% endblock %}

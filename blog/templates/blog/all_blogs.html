@@ -1,0 +1,19 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+
+        <!-- <a href="{% url 'home'  %}">Home</a><br> -->
+
+        <h2>Hawk has written {{blogs.count}} blog{{blogs.count|pluralize}}</h2>
+        <form action="">
+        Show latest <input type="text" id="n" name="n" value="5" size="1">  blogs
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+        {% for blog in blogs %}
+          <a href="{% url 'blog:detail' blog.id %}"> <h2>{{blog.title}}</h2></a>
+          <h5>{{blog.date|date:"SHORT_DATE_FORMAT"|upper}}</h5>
+          <p>{{blog.description|truncatechars:10}}</p>
+        {% endfor %}
+
+{% endblock %}
